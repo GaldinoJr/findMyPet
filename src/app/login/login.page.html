@@ -8,40 +8,39 @@
         <ion-card id="icLogin">
           <ion-card-header>
             <label class="title">
-              Login
+              {{login.titleCard}}
             </label>
           </ion-card-header>
 
           <ion-card-content>
-            <div class="myForm">
-              <label class="email">
-                Email
-              </label>
-              <br>
-              <ion-input type="text" value=""></ion-input>
-              <br>
-              <label class="password">
-                Senha
-              </label>
-              <br>
-              <ion-input type="text" value=""></ion-input>
-            </div>
+            <app-enter *ngIf="login.isLoginVisible"></app-enter>
+            <app-register *ngIf="!login.isLoginVisible"></app-register>
           </ion-card-content>
         </ion-card>
         <button id="btLogin">
-          Login
+          {{login.titleCard}}
         </button>
       </div>
 
-      <button id="btChangeToLogin">
+      <button id="btChangeToLogin" 
+        (click)="changeToLogin()" 
+        [style.background-color]="login.isLoginVisible ? '#BF89F4' : 'transparent'"
+        [style.color]="login.isLoginVisible ? 'white' : '#CAC3E6'">
         Login
       </button>
 
-      <button id="btChangeToSignUp">
+      <button id="btChangeToSignUp" 
+        (click)="changeToSignUp()"
+        [style.background-color]="!login.isLoginVisible ? '#BF89F4' : 'transparent'"
+        [style.color]="!login.isLoginVisible ? 'white' : '#CAC3E6'"
+      >
         Sign up
       </button>
     
-      <img class="ivLeft" src="/assets/left.svg">
+      <img class="ivLeft" 
+        src="/assets/left.svg"
+        [style.top]="login.isLoginVisible ?  '32.5%' : '44%'"
+        >
     
     </div>
   </div>

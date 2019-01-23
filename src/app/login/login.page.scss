@@ -24,7 +24,7 @@ ion-card {
 
 #divLogin {
     position: relative;
-    margin-left: 62px;
+    margin-left: 72px;
   }
   
 #btLogin {
@@ -49,8 +49,6 @@ ion-card {
     top: 34%;
     border-top-right-radius: 22px;
     border-bottom-right-radius: 22px;
-    background-color: #BF89F4;
-    color: white;
     padding: 8px;
     padding-right: 12px;
     font-size: 14px;
@@ -60,9 +58,10 @@ ion-card {
     position: absolute;
     width: fit-content;
     top: 44%;
-    background-color: transparent;
-    color: #CAC3E6;
     margin-top: 4px;
+    border-top-right-radius: 22px;
+    border-bottom-right-radius: 22px;
+    padding: 8px;
     font-size: 14px;
 }
 
@@ -70,32 +69,13 @@ ion-card {
     height: 40px;
     width: 40px;
     position: absolute;
-    top: 32.5%;
     left: 0;
-    margin-left: 49px;
-}
-
-.myForm {
-    ion-input{
-        width: 100%;
-        margin-top: 4px;
-        background-color: #85BAC8;
-        border-radius: 6px;
-    }
-    label.email{
-        margin-top: 24px;
-        display:inline-block;
-    }
+    margin-left: 59px;
 }
 
 label{
     color: white;
     font-size: 12px;
-}
-
-label.password{
-    margin-top:4px;
-    display:inline-block;
 }
 
 label.title{
