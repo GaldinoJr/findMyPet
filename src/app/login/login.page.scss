@@ -1,0 +1,105 @@
+.divRoot{
+    background-color: #8469C6;
+    top: 0; // Use different number if you have a header
+    left:0;
+    right:0;
+    bottom: 0;
+}
+
+ion-card {
+    border-top-left-radius: 22px;
+    border-bottom-left-radius: 22px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding-bottom: 80px;
+    margin-top: 36px;
+    margin-right: 0px;
+    background-color: #4BD9B7;
+}
+
+#divData{
+    position: relative;
+}
+
+#icLogin {
+    position: relative;
+  }
+
+#divLogin {
+    position: relative;
+    margin-left: 86px;
+  }
+  
+#btLogin {
+    position: absolute;
+    background-color: white;
+    width: fit-content;
+    height: 20px;
+    bottom: -10px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    border-radius: 22px;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: #BF89F4;
+  }
+  
+#btChangeToLogin{
+    position: absolute;
+    width: fit-content;
+    top: 34%;
+    border-top-right-radius: 22px;
+    border-bottom-right-radius: 22px;
+    background-color: #BF89F4;
+    color: white;
+    padding: 8px;
+    padding-right: 12px;
+}
+
+#btChangeToSignUp{
+    position: absolute;
+    width: fit-content;
+    top: 44%;
+    background-color: transparent;
+    color: #CAC3E6;
+    margin-top: 4px;
+}
+
+.ivLeft{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 32.5%;
+    left: 0;
+    margin-left: 73px;
+}
+
+.myForm {
+    ion-input{
+        width: 100%;
+        margin-top: 4px;
+        background-color: #85BAC8;
+        border-radius: 6px;
+    }
+    label.email{
+        margin-top: 24px;
+        display:inline-block;
+    }
+}
+
+label{
+    color: white
+}
+
+label.password{
+    margin-top:4px;
+    display:inline-block;
+}
+
+label.title{
+    margin-top:20px;
+    display:inline-block;
+    font-size: 24px;
+    font-weight: 300;
+}
