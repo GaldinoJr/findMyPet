@@ -1,0 +1,33 @@
+#ipRounded{
+    width: 100%;
+    height: 36px;
+    border-radius: 22px;
+    -webkit-box-shadow: 5px 5px 5px #E8F1FE; //web
+    -moz-box-shadow: 2px 2px 2px #E8F1FE; //android
+    box-shadow: 2px 2px 2px #E8F1FE; //ios
+    display:inline-block;
+    background: white;
+}
+
+.inputWithIcon input[type="text"] {
+    padding-left: 40px;
+  }
+
+.divRoot{
+    height: 100%;
+}
+
+.divFields{
+    vertical-align: middle;
+    display: table-cell;
+    height: 100vh;
+    width: 100vh;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.imgBackGround{
+    position: absolute;
+    bottom: 33%;
+
+}
