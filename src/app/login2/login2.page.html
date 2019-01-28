@@ -1,4 +1,4 @@
-<ion-content padding>
+<ion-content padding class="scroll-content">
   <img class="imgBackGround" src="/assets/dog_inicial.jpg">
 
   <div class="divRoot">
@@ -8,22 +8,25 @@
     </div>
 
     <div class="divFields" ng-app="loginJs" ng-controller="LoginController as loginC">
+      <form [formGroup]="form">
 
-      <ion-item style="margin-top: 20px;" >
-        <ion-label>
-          <ion-icon src="../../assets/ic_user.svg" ></ion-icon>
-        </ion-label>
-        <ion-input placeholder="Nome" type="text" ng-model="loginC.name"></ion-input>
-      </ion-item>
+        <ion-item style="margin-top: 20px;">
+          <ion-label>
+            <ion-icon src="../../assets/ic_user.svg"></ion-icon>
+          </ion-label>
+          <ion-input formControlName="name" placeholder="Nome" type="text" ></ion-input>
+        </ion-item>
 
-      <ion-item style="margin-top: 20px;" >
-        <ion-label>
-          <ion-icon src="../../assets/ic_password.svg"></ion-icon>
-        </ion-label>
-        <ion-input placeholder="Senha" type="password" ng-model="loginC.password"></ion-input>
-      </ion-item>
+        <ion-item style="margin-top: 20px;">
+          <ion-label>
+            <ion-icon src="../../assets/ic_password.svg"></ion-icon>
+          </ion-label>
+          <ion-input formControlName="password" placeholder="Senha" type="password" ></ion-input>
+        </ion-item>
 
-      <ion-button id="btRounded" style="margin-top: 50px;" shape="round" (click)="loginC.onLoginClicked()">Entrar</ion-button>
+        <ion-button [disabled]="!form.valid" id="btRounded" style="margin-top: 50px;" shape="round" (click)="onLoginClicked()">Entrar</ion-button>
+      </form>
+      
 
     </div>
   </div>

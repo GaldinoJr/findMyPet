@@ -1,4 +1,4 @@
 export class Login{
-    isLoginVisible: boolean
-    titleCard: string
+    name: string
+    password: string
 }

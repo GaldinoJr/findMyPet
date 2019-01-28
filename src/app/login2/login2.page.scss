@@ -28,5 +28,8 @@
 .imgBackGround{
     position: absolute;
     bottom: 36%;
-
 }
+
+[noScroll] {
+    overflow: hidden;
+  }
