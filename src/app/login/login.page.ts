@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Login2 } from 'src/domain/login2';
+import { Login2 } from 'src/domain/login/login2';
 
 
 @Component({
