@@ -1,6 +1,7 @@
 {
     "dogs": [
       {
+        "id":1,
         "imgUrl": "/assets/img/mock_cao.jpg",
         "name": "Roberto",
         "breed": "Pastor alemão",
@@ -9,6 +10,7 @@
         "kmsForMe": 15
       },
       {
+        "id":2,
         "imgUrl": "/assets/img/mock_bulldog.webp",
         "name": "Bob",
         "breed": "BullDog",
@@ -17,6 +19,7 @@
         "kmsForMe": 22
       },
       {
+        "id":3,
         "imgUrl": "/assets/img/mock_pitbull.jpeg",
         "name": "Soco",
         "breed": "Pitbull",
@@ -25,6 +28,7 @@
         "kmsForMe": 30
       },
       {
+        "id":4,
         "imgUrl": "/assets/img/mock_chihuahua.jpg",
         "name": "Satanás",
         "breed": "Chihuahua",
@@ -33,6 +37,7 @@
         "kmsForMe": 28
       },
       {
+        "id":5,
         "imgUrl": "/assets/img/mock_hot_valley.jpg",
         "name": "Joana",
         "breed": "Hot Valley",

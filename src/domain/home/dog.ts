@@ -1,4 +1,5 @@
 export class Dog{
+    id: number;
     imgUrl: string;
     name: string;
     breed: string;

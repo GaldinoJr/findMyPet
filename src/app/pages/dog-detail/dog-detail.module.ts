@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { DogDetailPage } from './dog-detail.page';
 
+
 const routes: Routes = [
   {
     path: '',
