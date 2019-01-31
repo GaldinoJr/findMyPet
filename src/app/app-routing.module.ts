@@ -3,9 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', loadChildren: './home/home.module#HomePageModule' },
+  { path: 'home', loadChildren: './pages/home/home.module#HomePageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
-  { path: 'login2', loadChildren: './login2/login2.module#Login2PageModule' },
+  { path: 'login2', loadChildren: './pages/login2/login2.module#Login2PageModule' },
+  { path: 'dog-detail', loadChildren: './pages/dog-detail/dog-detail.module#DogDetailPageModule' },
 ];
 
 @NgModule({

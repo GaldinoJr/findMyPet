@@ -3,6 +3,7 @@ import { Http } from '@angular/http';
 import { MockHelper } from 'src/helpers/mockHelper';
 import { DogResponseBody } from 'src/domain/home/dogResponseBody';
 import { Dog } from 'src/domain/home/dog';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,7 @@ export class HomePage implements OnInit{
   dogResponseBody: DogResponseBody;
   dogs: Array<Dog>
   mockHelper = new MockHelper();
-  constructor(private http: Http){
+  constructor(private navigation: NavController, private http: Http){
 
   }
 
@@ -25,4 +26,7 @@ export class HomePage implements OnInit{
       })
   }
 
+  onDogClicked(dog: Dog){
+    this.navigation.navigateBack("/dog-detail",{})
+  }
 }
