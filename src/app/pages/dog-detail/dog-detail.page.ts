@@ -12,9 +12,9 @@ export class DogDetailPage implements OnInit {
   dog: Dog;
 
   constructor(private route: ActivatedRoute, dogService: DogService) {
-    let id = this.route.snapshot.paramMap.get("id");
-    this.dog = dogService.getDogs(parseInt(id));
-    window.alert(this.dog.name)
+    // let id = this.route.snapshot.paramMap.get("id");
+    // this.dog = dogService.getDogs(parseInt(id));
+    // window.alert(this.dog.name)
    }
 
   ngOnInit() {

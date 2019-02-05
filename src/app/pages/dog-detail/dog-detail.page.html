@@ -1,9 +1,34 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>dogDetail</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Bob</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding center>
+  <ion-avatar class="avatar">
+    <img src="/assets/img/mock_bulldog.webp">
+  </ion-avatar>
+
+  <form class="form">
+    <ion-label class="label">Raça</ion-label>
+    <ion-input class="input" type="text" value="Bull dog" no-padding></ion-input>
+
+    <ion-label class="label" style="color: #a2a4ab; margin-top: 22px">- Informações do desaparecimento</ion-label>
+
+    <br><ion-label class="label">Perdido desde o dia</ion-label>
+    <ion-input class="input" type="date" no-padding></ion-input>
+
+    <ion-label class="label">Local</ion-label>
+    <ion-input class="input" type="text" no-padding></ion-input>
+
+    <ion-label class="label" style="color: #a2a4ab; margin-top: 22px">- Informações para contato</ion-label>
+
+    <br><ion-label class="label">Nome</ion-label>
+    <ion-input class="input" type="text" no-padding></ion-input>
+
+    <ion-label class="label" >Telefone</ion-label>
+    <ion-input class="input" type="number" no-padding></ion-input>
+
+  </form>
 
 </ion-content>
