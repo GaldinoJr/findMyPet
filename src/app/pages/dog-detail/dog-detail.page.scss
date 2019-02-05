@@ -1,15 +1,14 @@
-.avatar{
-    @extend .center;
-    width: 90px;
-    height: 90px;
-}
 
 .divCenter{
     margin-top: 12px
 }
 
-.form{
-    margin-top: 38px;
+.title{
+    margin-top: 36px;
+    font-size: 16px;
+    position: relative;
+    z-index: 5;
+    color: white;
 }
 
 .label{
@@ -28,7 +27,58 @@
     margin-right: auto;
     display: block;
 }
-
-.toolbar-background {
-    background-color:  --navbarColor;
+ 
+.card{
+    padding: 10px;
+    margin-top: 10px;
+    position: relative;
+    z-index: 5;
+    margin: 10px;
+    background: white;
 }
+
+.name{
+    font-size: 26px;
+    position: relative;
+    z-index: 5;
+    color: white;
+}
+
+.imgBackGround{
+    position: absolute;
+    width: 100vh;
+    height: 250px;
+    z-index: 0;
+}
+
+.avatar{
+    position: relative;
+    z-index: 5;
+    @extend .center;
+    width: 90px;
+    height: 90px;
+    margin-top: 16px;
+}
+
+.divCard{
+    position: relative;
+    z-index: 5;
+}
+
+.btSalvar{
+    width: 96%;
+    @extend .center;
+    height: 48px;
+    margin-top: 20px;
+}
+// .login {
+//     background: url(/assets/img/background_blue.png);
+//     background-repeat: no-repeat;
+//     background-size: contain;
+//     background-position: center;
+//     width: 100v;
+//     height: 246px;
+//     margin: auto;
+//     z-index: 2;
+//     position: relative;
+// }
