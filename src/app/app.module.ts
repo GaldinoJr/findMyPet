@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { DogService } from 'src/services/dogService';
+import { UserService } from 'src/services/userService';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +21,8 @@ import { DogService } from 'src/services/dogService';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    DogService
+    DogService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

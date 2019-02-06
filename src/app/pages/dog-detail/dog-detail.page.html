@@ -7,15 +7,15 @@
   </ion-button>
 
   <div text-center class="title">
-    <ion-label class="title">Editar perfil</ion-label>
+    <ion-label class="title" [style.visibility]="isEdit ? 'visibility' : 'hidden'">Editar perfil</ion-label>
   </div>
 
   <ion-avatar class="avatar">
-    <img src="/assets/img/mock_bulldog.webp">
+    <img src={{dog.imgUrl}}>
   </ion-avatar>
 
   <div text-center style="margin-top: 10px">
-    <ion-label class="name">Bob gordo</ion-label>
+    <ion-label class="name">{{dog.name}}</ion-label>
   </div>
 
   <ion-card no-margin class="card">
@@ -42,7 +42,11 @@
         <ion-item no-padding>
           <div>
             <ion-label class="label">Perdido desde o dia</ion-label>
-            <ion-input formControlName="date" class="input" type="date" no-padding></ion-input>
+            <ion-input 
+                formControlName="disappearanceDate" 
+                class="input" 
+                type="date" 
+                no-padding></ion-input>
         </div>
         </ion-item>
 
@@ -73,7 +77,7 @@
       </form>
     </ion-card-content>
   </ion-card>
-  <ion-button shape="round" class="btSalvar" (click)="onSaveClicked()">
+  <ion-button [style.display]="isEdit ? 'visibility' : 'none'" shape="round" class="btSalvar" (click)="onSaveClicked()">
     Salvar
   </ion-button>
 

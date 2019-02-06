@@ -6,6 +6,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LoginResponseBody } from 'src/domain/login/loginResponseBody';
 import { MockHelper } from 'src/helpers/mockHelper';
 import { Http } from '@angular/http';
+import { UserService } from 'src/services/userService';
 
 @Component({
   selector: 'app-login2',
@@ -25,7 +26,7 @@ export class Login2Page implements OnInit {
     password: new FormControl('',Validators.required)
   });
 
-  constructor(private nav : NavController, private http: Http) { }
+  constructor(private nav : NavController, private http: Http, private userService: UserService) { }
 
   ngOnInit() {
   }
@@ -35,8 +36,9 @@ export class Login2Page implements OnInit {
     this.mockHelper.login(this.http).subscribe(data => {
       console.log(data.json())
       this.loginResponse = data.json() as LoginResponseBody
-      if(this.loginResponse.isRegistered){
+      if(this.loginResponse.user.isRegistered){
         //this.nav.navigateRoot('/home',  {queryParams: {login: this.login}}); 
+        this.userService.user = this.loginResponse.user;
         this.nav.navigateRoot('/home',  {}); 
       }
      });

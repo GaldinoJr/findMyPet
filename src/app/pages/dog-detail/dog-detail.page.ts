@@ -4,6 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { DogService } from 'src/services/dogService';
 import { isNullOrUndefined } from 'util';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UserService } from 'src/services/userService';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-dog-detail',
@@ -11,25 +13,34 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./dog-detail.page.scss'],
 })
 export class DogDetailPage implements OnInit {
-  dog: Dog = new Dog;
-  form = new FormGroup({
-    breed: new FormControl(this.dog.breed, Validators.required),
-    date: new FormControl(this.dog.daysGone, Validators.required),
-    local: new FormControl(this.dog.streetLost, Validators.required),
-    name: new FormControl('', Validators.required),
-    phoneNumber: new FormControl('', Validators.required),
-  });
+  isEdit: boolean;
+  dog: Dog;
+  form : FormGroup;
 
-  constructor(private route: ActivatedRoute, dogService: DogService) {
+
+  constructor(private navigation: NavController, private route: ActivatedRoute, dogService: DogService, private userService: UserService) {
     let id = this.route.snapshot.paramMap.get("id");
     if(isNullOrUndefined(id)){
-      
+      this.dog = new Dog();
+      this.isEdit = false;
     }
     else{
       this.dog = dogService.getDogs(parseInt(id));
-      
+      if(userService.user.id == this.dog.ownerId){
+        this.isEdit = true;
+      }
+      else{
+        this.isEdit = false;
+      }
     }
-    
+    this.form = new FormGroup({
+      dogName: new FormControl(this.dog.name, Validators.required),
+      breed: new FormControl(this.dog.breed, Validators.required),
+      disappearanceDate: new FormControl(this.dog.disappearanceDate, Validators.required),
+      local: new FormControl(this.dog.streetLost, Validators.required),
+      name: new FormControl('', Validators.required),
+      phoneNumber: new FormControl('', Validators.required),
+    });
    }
 
   ngOnInit() {
@@ -38,6 +49,10 @@ export class DogDetailPage implements OnInit {
 
   onSaveClicked(){
     
+  }
+
+  goBack(){
+    this.navigation.goBack()
   }
 
 }

@@ -1,6 +1,5 @@
-
-import { Observable } from 'rxjs';
 import { Http } from '@angular/http';
+import { Observable } from 'rxjs';
 
 export class MockHelper{
     private _getDogsURL = 'assets/mocks/getDogs.json';   ;

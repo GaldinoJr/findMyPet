@@ -1,9 +1,10 @@
 export class Dog{
+    ownerId: number;
     id: number;
     imgUrl: string;
     name: string;
     breed: string;
-    daysGone: 0;
+    disappearanceDate: string;
     streetLost: string;
     kmsForMe: number;
 }

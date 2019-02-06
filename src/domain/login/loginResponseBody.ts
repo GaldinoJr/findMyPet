@@ -1,3 +1,5 @@
+import { User } from "./user";
+
 export class LoginResponseBody{
-    isRegistered: boolean
+    user: User;
 }

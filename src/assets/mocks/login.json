@@ -1,3 +1,6 @@
 {
-    "isRegistered": true
+    "user":{
+        "id":1,
+        "isRegistered": true
+    }
 }

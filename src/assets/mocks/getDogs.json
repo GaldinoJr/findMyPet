@@ -1,47 +1,52 @@
 {
     "dogs": [
       {
+        "ownerId":1,
         "id":1,
         "imgUrl": "/assets/img/mock_cao.jpg",
         "name": "Roberto",
         "breed": "Pastor alemão",
-        "daysGone": 8,
+        "disappearanceDate": "08/01/2018",
         "streetLost": "Rua A",
         "kmsForMe": 15
       },
       {
+        "ownerId":2,
         "id":2,
         "imgUrl": "/assets/img/mock_bulldog.webp",
         "name": "Bob",
         "breed": "BullDog",
-        "daysGone": 12,
+        "disappearanceDate": "12/03/2018",
         "streetLost": "Rua B",
         "kmsForMe": 22
       },
       {
+        "ownerId":3,
         "id":3,
         "imgUrl": "/assets/img/mock_pitbull.jpeg",
         "name": "Soco",
         "breed": "Pitbull",
-        "daysGone": 13,
+        "disappearanceDate": "01/09/2018",
         "streetLost": "Rua C",
         "kmsForMe": 30
       },
       {
+        "ownerId":4,
         "id":4,
         "imgUrl": "/assets/img/mock_chihuahua.jpg",
         "name": "Satanás",
         "breed": "Chihuahua",
-        "daysGone": 16,
+        "disappearanceDate": "01/01/2019",
         "streetLost": "Rua D",
         "kmsForMe": 28
       },
       {
+        "ownerId":5,
         "id":5,
         "imgUrl": "/assets/img/mock_hot_valley.jpg",
         "name": "Joana",
         "breed": "Hot Valley",
-        "daysGone": 20,
+        "disappearanceDate": "20/02/2018",
         "streetLost": "Rua E",
         "kmsForMe": 10
       }

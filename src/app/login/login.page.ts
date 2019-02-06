@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Login2 } from 'src/domain/login/login2';
+import { LoginExample } from 'src/domain/loginExample/loginExample';
+
+
 
 
 @Component({
@@ -8,7 +10,7 @@ import { Login2 } from 'src/domain/login/login2';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  login: Login2 = {
+  login: LoginExample = {
       isLoginVisible: true,
       titleCard: "Login"
   }
