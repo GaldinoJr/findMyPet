@@ -99,4 +99,13 @@
     margin-top: 40px;
   }
 
+  
+}
+.item-label-stacked {
+  --min-height: 30px;
+}
+
+.btBack.button-solid, .btBack.button-solid.activated {
+  --box-shadow: none;
+  -webkit-box-shadow: none;
 }

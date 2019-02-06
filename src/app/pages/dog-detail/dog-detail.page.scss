@@ -13,13 +13,14 @@
 
 .label{
     color: #3A7ADB;
-    margin-top: 12px;
+    margin-top: 14px;
     font-size: 12px;
     display:inline-block;
 }
 
 .input{
-   margin-top: 4px;
+    padding: 0px !important;
+    margin: 0px !important; 
 }
 
 .center{
@@ -70,15 +71,11 @@
     @extend .center;
     height: 48px;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
-// .login {
-//     background: url(/assets/img/background_blue.png);
-//     background-repeat: no-repeat;
-//     background-size: contain;
-//     background-position: center;
-//     width: 100v;
-//     height: 246px;
-//     margin: auto;
-//     z-index: 2;
-//     position: relative;
-// }
+
+.btBack{
+    margin-top: 24px;
+    position: absolute;
+}
+

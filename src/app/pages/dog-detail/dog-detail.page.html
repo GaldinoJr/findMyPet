@@ -1,6 +1,11 @@
 <ion-content class="content" center>
 
   <img class="imgBackGround" src="/assets/img/background_blue2.png">
+
+  <ion-button (click)="goBack()" class="btBack" >
+    <ion-icon name="arrow-back" (click)="goBack()"></ion-icon>
+  </ion-button>
+
   <div text-center class="title">
     <ion-label class="title">Editar perfil</ion-label>
   </div>
@@ -16,26 +21,55 @@
   <ion-card no-margin class="card">
     <ion-card-content>
       <form [formGroup]="form">
-        <ion-label class="label" style="margin-top: 4px">Raça</ion-label>
-        <ion-input formControlName="breed" class="input" type="text" no-padding></ion-input>
+        <!-- <ion-item no-margin no-padding>
+          <ion-label position="floating">Default Input</ion-label>
+          <ion-input></ion-input>
+        </ion-item> -->
+
+        <!-- <ion-item no-margin no-padding>
+            <ion-label position="stacked" class="label" style="margin-top: 4px">Raça</ion-label>
+            <ion-input></ion-input>
+    </ion-item> -->
+        <ion-item no-margin no-padding>
+          <div>
+            <ion-label floating class="label" style="margin-top: 4px">Raça</ion-label>
+            <ion-input ion-item formControlName="breed" class="input" type="text" no-padding no-margin></ion-input>
+          </div>
+        </ion-item>
 
         <ion-label class="label" style="color: #a2a4ab; margin-top: 22px">- Informações do desaparecimento</ion-label>
-
         <br>
-        <ion-label class="label">Perdido desde o dia</ion-label>
-        <ion-input formControlName="date" class="input" type="date" no-padding></ion-input>
+        <ion-item no-padding>
+          <div>
+            <ion-label class="label">Perdido desde o dia</ion-label>
+            <ion-input formControlName="date" class="input" type="date" no-padding></ion-input>
+        </div>
+        </ion-item>
 
-        <ion-label class="label">Local</ion-label>
-        <ion-input formControlName="local" class="input" type="text" no-padding></ion-input>
+        <ion-item no-padding>
+          <div>
+              <ion-label class="label">Local</ion-label>
+              <ion-input formControlName="local" class="input" type="text" no-padding></ion-input>
+          </div>
+        </ion-item>
 
         <ion-label class="label" style="color: #a2a4ab; margin-top: 22px">- Informações para contato</ion-label>
 
         <br>
-        <ion-label class="label">Nome</ion-label>
-        <ion-input formControlName="name" class="input" type="text" no-padding></ion-input>
+        <ion-item no-padding>
+          <div>
+              <ion-label class="label">Nome</ion-label>
+              <ion-input formControlName="name" class="input" type="text" no-padding></ion-input>
+          </div>
+        </ion-item>
 
-        <ion-label class="label">Telefone</ion-label>
-        <ion-input formControlName="phoneNumber" class="input" type="number" no-padding></ion-input>
+        <ion-item no-padding>
+          <div>
+              <ion-label class="label">Telefone</ion-label>
+              <ion-input formControlName="phoneNumber" class="input" type="number" no-padding></ion-input>
+          </div>
+        </ion-item>
+
       </form>
     </ion-card-content>
   </ion-card>
