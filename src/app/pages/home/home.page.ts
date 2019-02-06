@@ -5,6 +5,8 @@ import { DogResponseBody } from 'src/domain/home/dogResponseBody';
 import { Dog } from 'src/domain/home/dog';
 import { NavController } from '@ionic/angular';
 import { DogService } from 'src/services/dogService';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+
 
 @Component({
   selector: 'app-home',
@@ -17,8 +19,8 @@ export class HomePage implements OnInit{
   dogs: Array<Dog>
   mockHelper = new MockHelper();
 
-  constructor(private navigation: NavController, private http: Http, private dogService: DogService){
-
+  constructor(private statusBar: StatusBar, private navigation: NavController, private http: Http, private dogService: DogService){
+    this.statusBar.backgroundColorByHexString('#2E5EAA');
   }
 
   ngOnInit(){

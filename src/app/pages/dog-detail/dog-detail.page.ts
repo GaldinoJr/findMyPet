@@ -6,6 +6,8 @@ import { isNullOrUndefined } from 'util';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from 'src/services/userService';
 import { NavController } from '@ionic/angular';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+
 
 @Component({
   selector: 'app-dog-detail',
@@ -18,7 +20,8 @@ export class DogDetailPage implements OnInit {
   form : FormGroup;
 
 
-  constructor(private navigation: NavController, private route: ActivatedRoute, dogService: DogService, private userService: UserService) {
+  constructor(private statusBar: StatusBar, private navigation: NavController, private route: ActivatedRoute, dogService: DogService, private userService: UserService) {
+    this.statusBar.backgroundColorByHexString('#2E5EAA');
     let id = this.route.snapshot.paramMap.get("id");
     if(isNullOrUndefined(id)){
       this.dog = new Dog();

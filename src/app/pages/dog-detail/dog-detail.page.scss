@@ -36,6 +36,8 @@
     z-index: 5;
     margin: 10px;
     background: white;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .name{
@@ -67,7 +69,7 @@
 }
 
 .btSalvar{
-    width: 96%;
+    width: 90%;
     @extend .center;
     height: 48px;
     margin-top: 20px;

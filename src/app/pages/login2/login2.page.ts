@@ -7,6 +7,7 @@ import { LoginResponseBody } from 'src/domain/login/loginResponseBody';
 import { MockHelper } from 'src/helpers/mockHelper';
 import { Http } from '@angular/http';
 import { UserService } from 'src/services/userService';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 @Component({
   selector: 'app-login2',
@@ -26,9 +27,10 @@ export class Login2Page implements OnInit {
     password: new FormControl('',Validators.required)
   });
 
-  constructor(private nav : NavController, private http: Http, private userService: UserService) { }
+  constructor(private statusBar: StatusBar, private nav : NavController, private http: Http, private userService: UserService) { }
 
   ngOnInit() {
+    this.statusBar.backgroundColorByHexString('#2E5EAA');
   }
   
   onLoginClicked(){
