@@ -2,12 +2,12 @@
 
   <img class="imgBackGround" src="/assets/img/background_blue2.png">
 
-  <ion-button (click)="goBack()" class="btBack" >
+  <ion-button (click)="goBack()" class="btBack">
     <ion-icon name="arrow-back" (click)="goBack()"></ion-icon>
   </ion-button>
 
   <div text-center class="title">
-    <ion-label class="title" >{{title}}</ion-label>
+    <ion-label class="title">{{title}}</ion-label>
   </div>
 
   <ion-avatar class="avatar">
@@ -21,27 +21,11 @@
   <ion-card class="card">
     <ion-card-content>
       <form [formGroup]="form">
-        <!-- <ion-item no-margin no-padding>
-          <ion-label position="floating">Default Input</ion-label>
-          <ion-input></ion-input>
-        </ion-item> -->
-
-        <!-- <ion-item no-margin no-padding>
-            <ion-label position="stacked" class="label" style="margin-top: 4px">Raça</ion-label>
-            <ion-input></ion-input>
-    </ion-item> -->
+       
         <ion-item no-margin no-padding>
           <div>
             <ion-label floating class="label" style="margin-top: 4px">Raça</ion-label>
-            <ion-input 
-                ion-item formControlName="breed" 
-                class="input" t
-                ype="text" 
-                no-padding no-margin
-                [disabled]="state == 3 ? true : false"
-                >
-                </ion-input>
-
+            <ion-input formControlName="breed" class="input" type="text" no-padding no-margin [disabled]="state == 3 ? true : false"></ion-input>
           </div>
         </ion-item>
 
@@ -50,19 +34,14 @@
         <ion-item no-padding>
           <div>
             <ion-label class="label">Perdido desde o dia</ion-label>
-            <ion-input 
-                formControlName="disappearanceDate" 
-                class="input" 
-                type="date" 
-                no-padding
-                [disabled]="state == 3 ? true : false"></ion-input>
-        </div>
+            <ion-input formControlName="disappearanceDate" class="input" type="date" no-padding [disabled]="state == 3 ? true : false"></ion-input>
+          </div>
         </ion-item>
 
         <ion-item no-padding>
           <div>
-              <ion-label class="label">Local</ion-label>
-              <ion-input formControlName="local" class="input" type="text" no-padding [disabled]="state == 3 ? true : false"></ion-input>
+            <ion-label class="label">Local</ion-label>
+            <ion-input formControlName="local" class="input" type="text" no-padding [disabled]="state == 3 ? true : false"></ion-input>
           </div>
         </ion-item>
 
@@ -71,15 +50,15 @@
         <br>
         <ion-item no-padding>
           <div>
-              <ion-label class="label">Nome</ion-label>
-              <ion-input formControlName="name" class="input" type="text" no-padding [disabled]="state == 3 ? true : false"></ion-input>
+            <ion-label class="label">Nome</ion-label>
+            <ion-input formControlName="name" class="input" type="text" no-padding [disabled]="state == 3 ? true : false"></ion-input>
           </div>
         </ion-item>
 
         <ion-item no-padding>
           <div>
-              <ion-label class="label">Telefone</ion-label>
-              <ion-input formControlName="phoneNumber" class="input" type="number" no-padding [disabled]="state == 3 ? true : false"></ion-input>
+            <ion-label class="label">Telefone</ion-label>
+            <ion-input formControlName="phoneNumber" class="input" type="number" no-padding [disabled]="state == 3 ? true : false"></ion-input>
           </div>
         </ion-item>
 
