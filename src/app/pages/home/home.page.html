@@ -19,18 +19,18 @@
         <ion-label class="labelBreed">
             {{dog.breed}}
         </ion-label>
-        <img src={{dog.imgUrl}} class="imgDog">
+        <div class='rowKm'>
+            <ion-icon src="../../assets/icon/ic_distance_between.svg" class="iconKm"></ion-icon>
+            <ion-label class="labelKm">{{dog.kmsForMe}}Km</ion-label>
+          </div>
+        <img src={{dog.imgUrl}} class="imgDog" >
         <div class='row' >
-          <ion-icon src="../../assets/icon/ic_calendar.svg" class="icon"></ion-icon>
+          <ion-icon src="../../assets/icon/ic_calendar.svg" class="icon" style="color: #3A7ADB;"></ion-icon>
           <ion-label class="labelIcon">Desaparecido em {{dog.disappearanceDate}}</ion-label>
         </div>
         <div class='row'>
-          <ion-icon src="../../assets/icon/ic_local.svg" class="icon"></ion-icon>
+          <ion-icon src="../../assets/icon/ic_local_blue.svg" class="icon"></ion-icon>
           <ion-label class="labelIcon">{{dog.streetLost}}</ion-label>
-        </div>
-        <div class='row'>
-          <ion-icon src="../../assets/icon/ic_distance_between.svg" class="icon"></ion-icon>
-          <ion-label class="labelIcon">{{dog.kmsForMe}}Km de voce</ion-label>
         </div>
       </ion-card>
     </div>
