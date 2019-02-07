@@ -5,7 +5,11 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
+<ion-fab class="fbtAdd">
+    <ion-fab-button  (click)="onAddAnimalClicked()">
+        <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 <ion-content>
   <ion-list inset *ngFor="let dog of dogs;" (click)="onDogClicked(dog)" style="margin-top: 10px">
     <div class="divLine">
@@ -35,4 +39,6 @@
       </ion-card>
     </div>
   </ion-list>
+
+ 
 </ion-content>

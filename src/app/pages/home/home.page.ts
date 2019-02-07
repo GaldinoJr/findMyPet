@@ -36,4 +36,9 @@ export class HomePage implements OnInit{
     this.navigation.navigateForward(["/dog-detail/"+dog.id,{
     }])
   }
+
+  onAddAnimalClicked(){
+    this.navigation.navigateForward(["/dog-detail/"+-1,{
+    }])
+  }
 }

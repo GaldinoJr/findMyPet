@@ -7,6 +7,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from 'src/services/userService';
 import { NavController } from '@ionic/angular';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { state } from './stateScreen';
 
 
 @Component({
@@ -14,28 +15,37 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   templateUrl: './dog-detail.page.html',
   styleUrls: ['./dog-detail.page.scss'],
 })
+
 export class DogDetailPage implements OnInit {
-  isEdit: boolean;
+  title = "";
+  state: number;
   dog: Dog;
   form : FormGroup;
 
-
   constructor(private statusBar: StatusBar, private navigation: NavController, private route: ActivatedRoute, dogService: DogService, private userService: UserService) {
     this.statusBar.backgroundColorByHexString('#2E5EAA');
-    let id = this.route.snapshot.paramMap.get("id");
-    if(isNullOrUndefined(id)){
+    let sId = this.route.snapshot.paramMap.get("id");
+    let id = parseInt(sId);
+    if(id === -1){
       this.dog = new Dog();
-      this.isEdit = false;
+      this.state = state.new;
+      this.title = "Incluir";
+      this.dog.imgUrl = "/assets/img/placeholder_picture.svg";
     }
     else{
-      this.dog = dogService.getDogs(parseInt(id));
+      this.dog = dogService.getDogs(id);
       if(userService.user.id == this.dog.ownerId){
-        this.isEdit = true;
+        this.state = state.edit;
+        this.title = "Editar"
       }
       else{
-        this.isEdit = false;
+        this.state = state.view;
       }
     }
+    this.loadForm();
+  }
+
+  loadForm(){
     this.form = new FormGroup({
       dogName: new FormControl(this.dog.name, Validators.required),
       breed: new FormControl(this.dog.breed, Validators.required),
@@ -44,7 +54,7 @@ export class DogDetailPage implements OnInit {
       name: new FormControl('', Validators.required),
       phoneNumber: new FormControl('', Validators.required),
     });
-   }
+  }
 
   ngOnInit() {
     

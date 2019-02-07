@@ -7,7 +7,7 @@
   </ion-button>
 
   <div text-center class="title">
-    <ion-label class="title" [style.visibility]="isEdit ? 'visibility' : 'hidden'">Editar perfil</ion-label>
+    <ion-label class="title" >{{title}}</ion-label>
   </div>
 
   <ion-avatar class="avatar">
@@ -33,7 +33,15 @@
         <ion-item no-margin no-padding>
           <div>
             <ion-label floating class="label" style="margin-top: 4px">Raça</ion-label>
-            <ion-input ion-item formControlName="breed" class="input" type="text" no-padding no-margin></ion-input>
+            <ion-input 
+                ion-item formControlName="breed" 
+                class="input" t
+                ype="text" 
+                no-padding no-margin
+                [disabled]="state == 3 ? true : false"
+                >
+                </ion-input>
+
           </div>
         </ion-item>
 
@@ -46,14 +54,15 @@
                 formControlName="disappearanceDate" 
                 class="input" 
                 type="date" 
-                no-padding></ion-input>
+                no-padding
+                [disabled]="state == 3 ? true : false"></ion-input>
         </div>
         </ion-item>
 
         <ion-item no-padding>
           <div>
               <ion-label class="label">Local</ion-label>
-              <ion-input formControlName="local" class="input" type="text" no-padding></ion-input>
+              <ion-input formControlName="local" class="input" type="text" no-padding [disabled]="state == 3 ? true : false"></ion-input>
           </div>
         </ion-item>
 
@@ -63,21 +72,21 @@
         <ion-item no-padding>
           <div>
               <ion-label class="label">Nome</ion-label>
-              <ion-input formControlName="name" class="input" type="text" no-padding></ion-input>
+              <ion-input formControlName="name" class="input" type="text" no-padding [disabled]="state == 3 ? true : false"></ion-input>
           </div>
         </ion-item>
 
         <ion-item no-padding>
           <div>
               <ion-label class="label">Telefone</ion-label>
-              <ion-input formControlName="phoneNumber" class="input" type="number" no-padding></ion-input>
+              <ion-input formControlName="phoneNumber" class="input" type="number" no-padding [disabled]="state == 3 ? true : false"></ion-input>
           </div>
         </ion-item>
 
       </form>
     </ion-card-content>
   </ion-card>
-  <ion-button [style.display]="isEdit ? 'visibility' : 'none'" shape="round" class="btSalvar" (click)="onSaveClicked()">
+  <ion-button [style.display]="state != 3 ? 'visibility' : 'none'" shape="round" class="btSalvar" (click)="onSaveClicked()">
     Salvar
   </ion-button>
 
