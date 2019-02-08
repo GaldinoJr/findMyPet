@@ -9,7 +9,8 @@ import { Http } from '@angular/http';
 import { UserService } from 'src/services/userService';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { NameEditorComponent } from 'src/domain/nameEditorComponent';
+import { LoginData } from 'src/data/loginData';
+import { User } from 'src/domain/user/user';
 
 @Component({
   selector: 'app-login2',
@@ -18,10 +19,11 @@ import { NameEditorComponent } from 'src/domain/nameEditorComponent';
 })
 
 export class Login2Page implements OnInit {
-  loginResponse = new LoginResponseBody();
-  mockHelper = new MockHelper();
+  loginData: LoginData;
   login = new Login();
+  
   constructor(
+    public toastCtrl: ToastController,
     public firebaseauth: AngularFireAuth,
     private statusBar: StatusBar, 
     private nav : NavController, 
@@ -30,35 +32,42 @@ export class Login2Page implements OnInit {
 
   ngOnInit() {
     this.statusBar.backgroundColorByHexString('#2E5EAA');
+    this.loginData = new LoginData(this.firebaseauth)
   }
   
   onLoginClicked(){
-    this.cadastrarUsuario();
+    this.loginData.login(this.login)
+    .then(() => {
+      //   this.loginResponse = data.json() as LoginResponseBody
+        // if(this.loginResponse.user.isRegistered){
+          //this.nav.navigateRoot('/home',  {queryParams: {login: this.login}}); 
+          let loginResponse = new LoginResponseBody();
+          loginResponse.user = new User()
+          loginResponse.user.id = 1;
+          
+          this.userService.user = loginResponse.user;
+          this.nav.navigateRoot('/home',  {}); 
+        // }
+    })
+    .catch((erro: any) => {
+      this.presentToast(erro.message)
+      this.showLog(erro);
+    });
     
   }
 
-  public cadastrarUsuario(): void {        
-    
-    this.firebaseauth.auth.createUserWithEmailAndPassword(
-      this.login.getEmail(), this.login.getPassword() )
-    .then(() => {
-      // this.exibirToast('Usuário criado com sucesso');
-      this.mockHelper.login(this.http).subscribe(data => {
-        console.log(data.json())
-        this.loginResponse = data.json() as LoginResponseBody
-        if(this.loginResponse.user.isRegistered){
-          //this.nav.navigateRoot('/home',  {queryParams: {login: this.login}}); 
-          this.userService.user = this.loginResponse.user;
-          this.nav.navigateRoot('/home',  {}); 
-        }
-       });
-    })
-    .catch((erro: any) => {
-      this.exibirToast(erro);
+  async presentToast(mensagem: string) {
+    const toast = await this.toastCtrl.create({
+      message: mensagem,
+      duration: 2000,
+      position: "bottom"
     });
-  } 
+    toast.present();
+  }
 
-  private exibirToast(mensagem: string): void {
+  private showLog(mensagem: string): void {
     console.log(mensagem)
   }
 }
+
+// "auth/email-already-in-use"
