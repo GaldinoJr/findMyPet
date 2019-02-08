@@ -6,9 +6,8 @@
     <div text-center>
       <label class="title">Encontrar meu pet</label>
     </div>
-
     <div class="divFields">
-      <form [formGroup]="form">
+      <form [formGroup]="login.formValidator">
 
         <ion-item style="margin-top: 20px;">
           <ion-label>
@@ -24,7 +23,7 @@
           <ion-input formControlName="password" placeholder="Senha" type="password" ></ion-input>
         </ion-item>
 
-        <ion-button [disabled]="!form.valid" id="btRounded" style="margin-top: 50px;" shape="round" (click)="onLoginClicked()">Entrar</ion-button>
+        <ion-button [disabled]="!login.formValidator.valid" id="btRounded" style="margin-top: 50px;" shape="round" (click)="onLoginClicked()">Entrar</ion-button>
       </form>
     </div>
   </div>

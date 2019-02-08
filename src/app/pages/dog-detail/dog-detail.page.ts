@@ -73,7 +73,7 @@ export class DogDetailPage implements OnInit {
   ngOnInit() {
     this.form = new FormGroup({
       breed: new FormControl(this.dog.breed, Validators.required),
-      disappearanceDate: new FormControl(this.dog.disappearanceDate, Validators.required),
+      disappearanceDate: new FormControl(new Date(this.dog.disappearanceDate).toISOString(), Validators.required),
       local: new FormControl(this.dog.streetLost, Validators.required),
       name: new FormControl(this.owner.name, Validators.required),
       phoneNumber: new FormControl(this.owner.contact_number, Validators.required),

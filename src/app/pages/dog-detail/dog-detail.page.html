@@ -34,7 +34,13 @@
         <ion-item no-padding>
           <div>
             <ion-label class="label">Perdido desde o dia</ion-label>
-            <ion-input formControlName="disappearanceDate" class="input" type="date" no-padding [disabled]="state == 3 ? true : false"></ion-input>
+            <ion-datetime formControlName="disappearanceDate" 
+            display-format="DD/MM/YYYY" 
+            picker-format="DD/MM/YYYY"
+            no-padding 
+            [disabled]="state == 3 ? true : false"></ion-datetime>
+
+            <!-- <ion-input formControlName="disappearanceDate" class="input" type="date" no-padding [disabled]="state == 3 ? true : false"></ion-input> -->
           </div>
         </ion-item>
 
