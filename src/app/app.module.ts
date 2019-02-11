@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Injector, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
@@ -15,6 +15,8 @@ import { UserService } from 'src/services/userService';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { firebaseConfig } from '../config';
+import { HelperModule } from 'src/modules/helperModules';
+import { setAppInjector } from 'src/modules/app-injector';
 
 @NgModule({
   declarations: [AppComponent],
@@ -37,4 +39,9 @@ import { firebaseConfig } from '../config';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+
+export class AppModule {
+  constructor(private injector: Injector) {
+    setAppInjector(injector);
+  } 
+}

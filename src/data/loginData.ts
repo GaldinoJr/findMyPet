@@ -4,11 +4,10 @@ import { AngularFireAuth } from "angularfire2/auth";
 
 export class LoginData{
 
-    constructor(public firebaseauth: AngularFireAuth,
-        ){
+    constructor(){
         
     }
-    firebaseHelper = new FireBaseHelper(this.firebaseauth);
+    firebaseHelper = new FireBaseHelper();
 
     login(login: Login): Promise<firebase.auth.UserCredential>{
         return this.firebaseHelper.login(login)

@@ -24,15 +24,13 @@ export class Login2Page implements OnInit {
   
   constructor(
     public toastCtrl: ToastController,
-    public firebaseauth: AngularFireAuth,
     private statusBar: StatusBar, 
     private nav : NavController, 
-    private http: Http, 
     private userService: UserService) { }
 
   ngOnInit() {
     this.statusBar.backgroundColorByHexString('#2E5EAA');
-    this.loginData = new LoginData(this.firebaseauth)
+    this.loginData = new LoginData()
   }
   
   onLoginClicked(){
