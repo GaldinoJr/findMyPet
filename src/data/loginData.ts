@@ -1,6 +1,7 @@
 import { Login } from "src/domain/login/login";
 import { FireBaseHelper } from "src/helpers/fireBaseHelper";
-import { AngularFireAuth } from "angularfire2/auth";
+import { LoginResponseBody } from "src/domain/login/loginResponseBody";
+import { Observable } from "rxjs";
 
 export class LoginData{
 
@@ -9,7 +10,7 @@ export class LoginData{
     }
     firebaseHelper = new FireBaseHelper();
 
-    login(login: Login): Promise<firebase.auth.UserCredential>{
+    login(login: Login): Observable<LoginResponseBody>{
         return this.firebaseHelper.login(login)
     }
 }
