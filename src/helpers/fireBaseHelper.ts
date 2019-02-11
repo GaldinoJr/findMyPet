@@ -17,10 +17,16 @@ export class FireBaseHelper{
                         loginResponse.user = new User()
                         loginResponse.user.id = 1;
                         observer.next(loginResponse)
-                      // }
                   })
                   .catch((erro: any) => {
-                    observer.error(new Error(erro.message))
+                      switch(erro.code){
+                            case "auth/weak-password":
+                                observer.error(new Error("Senha deve ter no mínimo 6 caracteres"))
+                                break;
+                            default:
+                                observer.error(new Error("Erro"))
+                                break;
+                      }
                   });
         });
     }

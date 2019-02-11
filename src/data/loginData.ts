@@ -11,6 +11,6 @@ export class LoginData{
     firebaseHelper = new FireBaseHelper();
 
     login(login: Login): Observable<LoginResponseBody>{
-        return this.firebaseHelper.login(login)
+         return this.firebaseHelper.login(login)
     }
 }
