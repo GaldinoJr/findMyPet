@@ -16,7 +16,7 @@ export class FireBaseHelper{
     
                         loginResponse.user = new User()
                         loginResponse.user.id = 1;
-                        observer.onNext(loginResponse)
+                        observer.next(loginResponse)
                       // }
                   })
                   .catch((erro: any) => {
