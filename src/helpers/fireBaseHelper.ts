@@ -23,6 +23,8 @@ export class FireBaseHelper{
                             case "auth/weak-password":
                                 observer.error(new Error("Senha deve ter no mínimo 6 caracteres"))
                                 break;
+                            case "auth/email-already-in-use":
+                                break;
                             default:
                                 observer.error(new Error("Erro"))
                                 break;
