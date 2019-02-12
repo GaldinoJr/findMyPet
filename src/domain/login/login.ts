@@ -1,18 +1,18 @@
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 
 export class Login{
-    name: string
-     password: string
+    private _name: string
+    private _password: string
     
     
-    getEmail(): string{
-        this.name = this.formValidator.get('name').value;
-        return this.name + "@email.com"
+    get email(): string{
+        this._name = this.formValidator.get('name').value;
+        return this._name + "@email.com"
     }
 
-    getPassword(){
-        this.password = this.formValidator.get('password').value;
-        return this.password;
+    get password(){
+        this._password = this.formValidator.get('password').value;
+        return this._password;
     }
 
     formValidator = new FormGroup({

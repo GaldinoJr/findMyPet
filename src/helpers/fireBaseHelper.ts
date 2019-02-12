@@ -11,7 +11,7 @@ export class FireBaseHelper{
     login(login: Login): Observable<LoginResponseBody>{
         return Observable.create(observer =>{
             this.firebaseauth.auth.createUserWithEmailAndPassword(
-                login.getEmail(), login.getPassword()).then(() => {
+                login.email, login.password).then(() => {
                         let loginResponse = new LoginResponseBody();
     
                         loginResponse.user = new User()
