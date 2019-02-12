@@ -28,15 +28,15 @@ export class Login2Page implements OnInit {
   }
   
   onLoginClicked(){
-    this.loginData.login(this.login)
+    this.loginData.register(this.login)
     .subscribe(res =>{
       let loginResponse = res as LoginResponseBody
       this.userService.user = loginResponse.user;
       this.nav.navigateRoot('/home',  {}); 
     },
     err =>{
-      this.presentToast(err.message);
-      this.showLog(err.message);
+      this.presentToast(err);
+      this.showLog(err);
     })
   }
 
@@ -53,5 +53,3 @@ export class Login2Page implements OnInit {
     console.log(mensagem)
   }
 }
-
-// "auth/email-already-in-use"
