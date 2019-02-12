@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { MockHelper } from 'src/helpers/mockHelper';
-import { DogResponseBody } from 'src/domain/dog/dogResponseBody';
-import { Dog } from 'src/domain/dog/dog';
+import { DogResponseBody } from 'src/pageModels/dog/dogResponseBody';
+import { Dog } from 'src/pageModels/dog/dog';
 import { NavController } from '@ionic/angular';
 import { DogService } from 'src/services/dogService';
 import { StatusBar } from '@ionic-native/status-bar/ngx';

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Dog } from 'src/domain/dog/dog';
+import { Dog } from 'src/pageModels/dog/dog';
 import { ActivatedRoute } from '@angular/router';
 import { DogService } from 'src/services/dogService';
 import { isNullOrUndefined } from 'util';
@@ -10,7 +10,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { state } from './stateScreen';
 import { MockHelper } from 'src/helpers/mockHelper';
 import { Http } from '@angular/http';
-import { Owner } from 'src/domain/owner/owner';
+import { Owner } from 'src/pageModels/owner/owner';
 
 
 @Component({

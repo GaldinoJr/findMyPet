@@ -1,7 +1,7 @@
 import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
-import { Login } from 'src/domain/login/login';
+import { LoginModel } from 'src/pageModels/login/loginModel';
 import { NavController, ToastController } from '@ionic/angular';
-import { LoginResponseBody } from 'src/domain/login/loginResponseBody';
+import { LoginResponseBody } from 'src/pageModels/login/loginResponseBody';
 import { UserService } from 'src/services/userService';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { LoginData } from 'src/data/loginData';
@@ -15,7 +15,7 @@ import { BasePage } from '../basePage';
 
 export class Login2Page extends BasePage implements OnInit {
   loginData: LoginData;
-  login = new Login();
+  login = new LoginModel();
   
   constructor(
     public toastCtrl: ToastController,

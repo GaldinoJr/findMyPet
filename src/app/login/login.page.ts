@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginExample } from 'src/domain/loginExample/loginExample';
-
-
-
+import { LoginExample } from 'src/pageModels/loginExample/loginExample';
 
 @Component({
   selector: 'app-login',

@@ -1,14 +1,14 @@
-import { Login } from "src/domain/login/login";
+import { LoginModel } from "src/pageModels/login/loginModel";
 import { AngularFireAuth } from "angularfire2/auth";
-import { LoginResponseBody } from "src/domain/login/loginResponseBody";
+import { LoginResponseBody } from "src/pageModels/login/loginResponseBody";
 import { AppInjector} from '../modules/app-injector';
-import { User } from "src/domain/user/user";
+import { User } from "src/pageModels/user/user";
 import { Observable } from "rxjs";
 
 export class FireBaseHelper{
     public _firebaseauth: AngularFireAuth = AppInjector.get(AngularFireAuth);
 
-    register(login: Login): Observable<LoginResponseBody>{
+    register(login: LoginModel): Observable<LoginResponseBody>{
         return Observable.create(observer =>{
             this._firebaseauth.auth.createUserWithEmailAndPassword(
                 login.email, login.password).then(() => {
@@ -35,7 +35,7 @@ export class FireBaseHelper{
     //           observer.error(new Error("Erro"))
     //           break; 
 
-    login(login: Login): Observable<LoginResponseBody>{
+    login(login: LoginModel): Observable<LoginResponseBody>{
         return Observable.create(observer =>{ 
                 this._firebaseauth.auth.signInWithEmailAndPassword(login.email, login.password).then(() =>{
                 let loginResponse = new LoginResponseBody();

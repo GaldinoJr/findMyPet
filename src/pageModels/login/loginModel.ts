@@ -1,6 +1,6 @@
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 
-export class Login{
+export class LoginModel{
     private _name: string
     private _password: string
     

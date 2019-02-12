@@ -1,6 +1,6 @@
-import { Login } from "src/domain/login/login";
+import { LoginModel } from "src/pageModels/login/loginModel";
 import { FireBaseHelper } from "src/helpers/fireBaseHelper";
-import { LoginResponseBody } from "src/domain/login/loginResponseBody";
+import { LoginResponseBody } from "src/pageModels/login/loginResponseBody";
 import { Observable } from "rxjs";
 import 'rxjs/add/operator/mergeMap'
 import 'rxjs/add/operator/map'
@@ -13,7 +13,7 @@ export class LoginData{
     }
     firebaseHelper = new FireBaseHelper();
 
-    register(login: Login): Observable<LoginResponseBody>{
+    register(login: LoginModel): Observable<LoginResponseBody>{
          return this.firebaseHelper.register(login).
          catch(err =>{
             switch(err.message){
@@ -27,7 +27,7 @@ export class LoginData{
          })
     }
 
-    login(login: Login): Observable<LoginResponseBody>{
+    login(login: LoginModel): Observable<LoginResponseBody>{
         return this.firebaseHelper.login(login)
         .catch(err => {
             if(err.message == "auth/wrong-password"){

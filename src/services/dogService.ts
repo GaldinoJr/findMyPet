@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Dog } from 'src/domain/dog/dog';
+import { Dog } from 'src/pageModels/dog/dog';
 
 @Injectable()
 export class DogService {
