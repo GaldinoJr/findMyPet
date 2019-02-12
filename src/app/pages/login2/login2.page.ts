@@ -5,6 +5,7 @@ import { LoginResponseBody } from 'src/domain/login/loginResponseBody';
 import { UserService } from 'src/services/userService';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { LoginData } from 'src/data/loginData';
+import { BasePage } from '../basePage';
 
 @Component({
   selector: 'app-login2',
@@ -12,7 +13,7 @@ import { LoginData } from 'src/data/loginData';
   styleUrls: ['./login2.page.scss'],
 })
 
-export class Login2Page implements OnInit {
+export class Login2Page extends BasePage implements OnInit {
   loginData: LoginData;
   login = new Login();
   
@@ -20,7 +21,9 @@ export class Login2Page implements OnInit {
     public toastCtrl: ToastController,
     private statusBar: StatusBar, 
     private nav : NavController, 
-    private userService: UserService) { }
+    private userService: UserService) {
+      super(toastCtrl)
+     }
 
   ngOnInit() {
     this.statusBar.backgroundColorByHexString('#2E5EAA');
@@ -38,18 +41,5 @@ export class Login2Page implements OnInit {
       this.presentToast(err);
       this.showLog(err);
     })
-  }
-
-  async presentToast(mensagem: string) {
-    const toast = await this.toastCtrl.create({
-      message: mensagem,
-      duration: 2000,
-      position: "bottom"
-    });
-    toast.present();
-  }
-
-  private showLog(mensagem: string): void {
-    console.log(mensagem)
   }
 }
