@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/catch'
 import { throwError } from 'rxjs';
 
-export class LoginData{
+export class LoginInteractor{
 
     constructor(){
     }
